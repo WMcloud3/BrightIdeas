@@ -1,0 +1,15 @@
+<a href="/dashboard">Bright Ideas</a>
+<a href="/">Log Out</a>
+
+<p><a href="/user/@ViewBag.SingleIdea.UserId">@ViewBag.SingleIdea.Creator.Alias</a></p>
+        <textarea>@ViewBag.SingleIdea.Content</textarea>
+
+
+<h1>People that Liked this Post</h1>
+@foreach (Like like in ViewBag.SingleIdea.Likes)
+{
+    <table>
+        <td>@like.User.Alias</td>
+        <td>@like.User.Name</td>
+    </table>
+}
